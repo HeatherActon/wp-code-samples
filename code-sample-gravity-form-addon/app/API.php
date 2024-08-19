@@ -39,18 +39,19 @@ class Sample_Gravity_Forms_API extends SampleGravityForms {
 		$form_settings = $this->get_form_settings( $form );
 
 		// If this form doesn't have the SFMC send enabled, bail.
-		if ( '1' !== $form_settings[ 'sfmc_enabled' ] ) {
+		if ( '1' !== $form_settings['sfmc_enabled'] ) {
 			$this->log_debug( 'sfmc send not enabled on form ID ' . print_r( $form_id, true ) );
 			return;
 		}
 
 		// If this form doesn't have the SFMC POST URL entered, bail.
 		$post_url = '';
-		if ( ! array_key_exists( 'sfmc_post_url', $form_settings ) || '' === $form_settings[ 'sfmc_post_url' ] ) {
+		if ( ! array_key_exists( 'sfmc_post_url', $form_settings ) || '' === $form_settings['sfmc_post_url'] ) {
 			$this->log_debug( 'sfmc POST URL not entered on form ID ' . print_r( $form_id, true ) );
 			gform_update_meta( $entry['id'], 'sent_to_sfmc', 'failure | POST URL not filled in' );
 			return;
-		} else {
+		}
+		else {
 			$post_url = $form_settings['sfmc_post_url'];
 		}
 
@@ -78,16 +79,16 @@ class Sample_Gravity_Forms_API extends SampleGravityForms {
 		// Subscribe form.
 		if ( 1 === $form_id ) {
 
-			$payload       = array(
+			$payload = array(
 				"items" => array(
 					array(
-						"FirstName"    => rgar( $entry, '16' ),
-						"LastName"     => rgar( $entry, '17' ),
-						"Email" => rgar( $entry, '20' ),
-						"Gender"       => rgar( $entry, '23' ),
-						"DOB"          => rgar( $entry, '22' ),
-						"Interested"   => rgar( $entry, '18' ),
-						"SourceURL"    => rgar( $entry, '24' )
+						"FirstName"  => rgar( $entry, '16' ),
+						"LastName"   => rgar( $entry, '17' ),
+						"Email"      => rgar( $entry, '20' ),
+						"Gender"     => rgar( $entry, '23' ),
+						"DOB"        => rgar( $entry, '22' ),
+						"Interested" => rgar( $entry, '18' ),
+						"SourceURL"  => rgar( $entry, '24' )
 					)
 				)
 			);
@@ -95,16 +96,16 @@ class Sample_Gravity_Forms_API extends SampleGravityForms {
 		}
 		// Subscribe form on home.
 		elseif ( 2 === $form_id ) {
-			$payload       = array(
+			$payload = array(
 				"items" => array(
 					array(
-						"FirstName"    => rgar( $entry, '32' ),
-						"LastName"     => rgar( $entry, '33' ),
-						"Email" => rgar( $entry, '28' ),
-						"Gender"       => rgar( $entry, '26' ),
-						"DOB"          => rgar( $entry, '25' ),
-						"Interested"   => rgar( $entry, '23' ),
-						"SourceURL"    => rgar( $entry, '31' )
+						"FirstName"  => rgar( $entry, '32' ),
+						"LastName"   => rgar( $entry, '33' ),
+						"Email"      => rgar( $entry, '28' ),
+						"Gender"     => rgar( $entry, '26' ),
+						"DOB"        => rgar( $entry, '25' ),
+						"Interested" => rgar( $entry, '23' ),
+						"SourceURL"  => rgar( $entry, '31' )
 					)
 				)
 			);
@@ -150,7 +151,7 @@ class Sample_Gravity_Forms_API extends SampleGravityForms {
 			$Pancreatitis                             = rgar( $entry, '10' );
 			$Which_Best_Describes_You                 = rgar( $entry, '16' );
 
-			$payload       = array(
+			$payload = array(
 				"items" => array(
 					array(
 						"FirstName"                                => rgar( $entry, '13' ),
