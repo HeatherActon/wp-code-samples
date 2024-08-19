@@ -1,0 +1,204 @@
+/* The Modal (background) */
+.modal {
+	display: none;
+	/* Hidden by default */
+	position: fixed;
+	/* Stay in place */
+	z-index: 10;
+	/* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%;
+	/* Full width */
+	height: 100%;
+	/* Full height */
+	overflow: auto;
+	/* Enable scroll if needed */
+	background-color: rgb(0, 0, 0);
+	/* Fallback color */
+	background-color: rgba(0, 0, 0, 0.8);
+	/* Black w/ opacity */
+
+	.modal-content {
+		max-width: var(--wp--custom--layout--content);
+		margin: auto;
+		position: relative;
+		height: auto;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		padding: 32px;
+		form {
+			width: 100%;
+		}
+		/* The Close Button */
+		.close {
+			position: absolute;
+			top: 16px;
+			right: 16px;
+			color: var(--wp--preset--color--bg-1);
+			font-size: 36px;
+			font-weight: bold;
+		}
+		.close:hover,
+		.close:focus {
+			color: var(--wp--preset--color--bg-1);
+			text-decoration: none;
+			cursor: pointer;
+		}
+	}
+}
+
+#modal-subscribe {
+	.modal-content {
+		overflow: auto;
+		border-radius: 1rem 1rem 14.375rem 1rem;
+		border: 6px solid var(--wp--preset--color--bg-2);
+		background: #FFF;
+		max-width: 90vw;
+		max-height: 90vh;
+		top: 5vh;
+		padding: 1rem;
+		@include media(">=medium") {
+			top: 10vh;
+			max-width: 80vw;
+			max-height: 600px;
+			padding: 2rem 300px 2rem 2rem;
+			overflow: visible;
+		}
+		@include media(">=desktop") {
+			max-width: 1100px;
+
+		}
+		.close {
+			top: 0;
+			color: var(--wp--preset--color--fg-1);
+		}
+		.gform_title {
+			font-size: var(--wp--preset--font-size--gigantic);
+			margin: 0 0 .5rem;
+			font-weight: 400;
+			line-height: var(--wp--custom--line-height--tiny);
+		}
+		.gform_description {
+			font-size: var(--wp--preset--font-size--large);
+			margin: 0 0 .5rem;
+			@include media(">=medium") {
+				margin-bottom: var(--wp--custom--layout--block-gap);
+			}
+		}
+		input[type=text],
+		input[type=email] {
+			margin: 0 0 .5rem;
+			line-height: 1;
+			@include media(">=medium") {
+				margin-bottom: var(--wp--custom--layout--block-gap);
+			}
+		}
+		.gfield--type-select {
+			margin-bottom: 1rem;
+			label {
+				margin-top: .5rem;
+				margin-bottom: .25rem;
+			}
+			@include media(">=medium") {
+				margin-bottom: var(--wp--custom--layout--block-gap-medium);
+			}
+		}
+		.gfield--type-html {
+			font-size: 9px;
+			padding-right: 8px;
+			@include media(">=medium") {
+				font-size: 11px;
+			}
+		}
+		input[type=submit] {
+			line-height: 1;
+
+		}
+		figure {
+			display: none;
+			@include media(">=medium") {
+				display: inline-block;
+				position: absolute;
+				top: 3rem;
+        		right: -79px;
+				z-index: 4;
+			}
+			figcaption {
+				position: absolute;
+				left: 36px;
+				top: 35%;
+				text-align: left;
+				color: var(--wp--preset--color--bg-1);
+				font-style: italic;
+				font-size: var(--wp--preset--font-size--medium);
+			}
+		}
+	}
+}
+#modal-leaving {
+	background-color: rgba(144, 107, 232, .8);
+
+	.modal-content {
+		display: block;
+		width: 96%;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 1.5rem;
+		background: white;
+		border: 6px solid #906BE8;
+		border-radius: 1rem;
+		box-shadow: 0 0 30px 24px rgba(255, 255, 255, .5);
+		text-align: center;
+
+		@include media(">=medium") {
+			border-radius: 1rem 1rem 14.375rem 1rem;
+			padding: 3rem;
+			text-align: left;
+			> * {
+				max-width: 80%;
+			}
+		}
+		.close {
+			top: 0;
+			cursor: pointer;
+			color: var(--wp--preset--color--bg-3);
+			text-decoration: none;
+		}
+		img {
+			width: 100%;
+			max-width: 420px;
+			margin-top: 1rem;
+			@include media(">=medium") {
+				width: 60%;
+				margin-top: 0;
+			}
+		}
+		h3 {
+			font-size: var(--wp--preset--font-size--jumbo);
+			margin: .75rem 0;
+		}
+		p {
+			font-size: var(--wp--preset--font-size--large);
+			margin: .75rem 0;
+		}
+		.wp-block-buttons {
+			justify-content: center;
+			@include media(">=medium") {
+				justify-content: flex-start;
+			}
+		}
+		.wp-element-button, .wp-block-button__link {
+			padding: var(--wp--preset--spacing--40) 2rem;
+			@include media(">=medium") {
+				padding: var(--wp--preset--spacing--50) 3rem;
+			}
+		}
+	}
+}
+#modal-search {
+	.modal-content {
+		height: 100%;
+	}
+}

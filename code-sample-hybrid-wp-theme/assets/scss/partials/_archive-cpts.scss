@@ -1,0 +1,135 @@
+/* Recipes & Stories (CPTs)
+--------------------------------------------- */
+.post-type-archive-recipe,
+.post-type-archive-story {
+	.site-main {
+		@include media(">=phone") {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-column-gap: var(--wp--custom--layout--block-gap);
+		}
+		@include media(">=tablet") {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+	}
+	#breadcrumbs,
+	.archive-header {
+		width: 100%;
+		@include media(">=phone") {
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+		@include media(">=tablet") {
+			grid-column-end: 4;
+		}
+	}
+	#breadcrumbs {
+		margin-bottom: 0;
+	}
+	.archive-header {
+		h1 {
+			margin-top: var(--wp--custom--layout--block-gap-medium);
+		}
+	}
+	.post-summary {
+		margin-bottom: var(--wp--custom--layout--block-gap-medium);
+		text-align: center;
+		&:last-of-type:nth-child(3n+6) {
+			@include media(">=tablet") {
+				grid-column-start: 2;
+			}
+		}
+		.post-summary__image {
+			img {
+				border: 12px solid;
+				transition: border-color .2s ease-in-out;
+				border-radius: 100%;
+				margin: 0 auto;
+				border-color: #e6e8fb;
+			}
+		}
+		&:hover {
+			.post-summary__image {
+				img {
+					border-color: #906ce7;
+				}
+			}
+		}
+		.post-summary__title {
+			font-size: var(--wp--preset--font-size--small);
+		}
+	}
+
+
+}
+
+/* Recipe specific */
+.post-type-archive-recipe {
+	.archive-header {
+		.recipe-terms {
+			display: flex;
+			flex-wrap: wrap;
+			margin-top: var(--wp--custom--layout--block-gap);
+			margin-bottom: var(--wp--custom--layout--block-gap-medium);
+			.recipe-type-marker {
+				margin-right: 1rem;
+				display: flex;
+				align-items: center;
+				&:before {
+					display: inline-block;
+					content: " ";
+					height: 24px;
+					width: 24px;
+					margin-right: .5rem;
+					border: 6px solid;
+					border-radius: 100%;
+				}
+				&.recipe-type--vegetarian {
+					&:before {
+						border-color: #FFD1C0;
+					}
+				}
+				&.recipe-type--includes-meat {
+					&:before {
+						border-color: #e6e8fb;
+					}
+				}
+			}
+		}
+	}
+	.post-summary {
+
+		&.recipe-type--vegetarian {
+			.post-summary__image {
+				img {
+					border-color: #FFD1C0;
+				}
+
+			}
+			&:hover {
+				.post-summary__image {
+					img {
+						border-color: #ff7e4f;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Story specific */
+.post-type-archive-story {
+	.archive-header {
+		margin-bottom: var(--wp--custom--layout--block-gap-medium);
+	}
+	.block-area-after-stories-archive {
+		@include media(">=phone") {
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+		@include media(">=tablet") {
+			grid-column-end: 4;
+		}
+	}
+}

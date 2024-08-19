@@ -1,0 +1,175 @@
+/* Confirmation page */
+.page-template-template-quiz-confirmation {
+	.site-inner {
+		padding: 0;
+	}
+	.site-main {
+		background: #e6e8fb;
+		overflow: hidden;
+	}
+	.entry-header {
+		display: none;
+	}
+}
+#kytg-quiz-confirmation {
+
+	@include media(">=1024px") {
+		background: #e6e8fb;
+		position: relative;
+	}
+
+	h1 {
+		font-size: 58px;
+		margin-top: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	.wp-block-columns {
+		max-width: 1440px;
+		width: 100%;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap !important;
+		padding-left: var(--wp--custom--layout--padding);
+		padding-right: var(--wp--custom--layout--padding);
+		@include media(">=1024px") {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			grid-column-gap: 16px;
+			align-items: center !important;
+			height: 700px;
+		}
+		@include media(">=1200px") {
+			padding: 0 120px;
+		}
+		.wp-block-column {
+			flex-basis: initial;
+		}
+	}
+
+	.text-information {
+		order: 2;
+		padding-top: 0;
+		padding-right: 0;
+		padding-bottom: 32px;
+
+		@include media(">=1024px") {
+			order: 1;
+			grid-column-start: 1;
+			grid-column-end: 4;
+			padding-top: 32px;
+			padding-right: 120px;
+		}
+		@include media(">=1200px") {
+			padding-right: 200px;
+		}
+
+		h2 {
+			font-size: 24px;
+			margin-bottom: 1rem;
+
+			@include media(">=1024px") {
+				font-size: 32px;
+			}
+		}
+		p {
+			margin-bottom: 1.5rem;
+			line-height: 1.4;
+		}
+		.button {
+			display: block;
+			text-align: center;
+			text-decoration: none;
+			font-size: 12px;
+			background: var(--wp--preset--color--bg-1);
+			color: #FF7E4F !important;
+			border: 1px solid #FF7E4F;
+			border-radius: 30px;
+			color: var(--wp--preset--color--bg-1);
+			padding: 16px 24px;
+			width: 150px;
+			max-width: none;
+			cursor: pointer;
+
+			&:hover {
+				background: #FF7E4F;
+				color: var(--wp--preset--color--bg-1) !important;
+			}
+
+			@include media(">=1024px") {
+				font-size: 16px;
+				width: 250px;
+			}
+		}
+	}
+
+	#question-tip {
+		order: 1;
+		width: 100%;
+		background-color: transparent;
+
+		@include media(">=1024px") {
+			order: 2;
+			grid-column-start: 4;
+			grid-column-end: 6;
+			display: grid;
+			grid-template-rows: repeat(3, 200px);
+			background-color: transparent;
+			position: relative;
+			z-index: 2;
+		}
+
+		.survey-callout {
+			font-size: 16px;
+			color: var(--wp--preset--color--bg-1);
+			background: #9e7feb;
+			padding: 16px 16px 16px 48px;
+			margin-top: 1.5rem;
+			margin-bottom: 1.5rem;
+			background-image: url('../images/yield-icon.png');
+			background-repeat: no-repeat;
+			background-position: 12px 19px;
+			background-size: 24px;
+
+			@include media(">=1024px") {
+				font-size: 24px;
+				color: var(--wp--preset--color--bg-1);
+				padding: 0 32px 0 80px;
+				background-position: 0 6px;
+				background-size:60px;
+				margin-top: 0;
+				margin-bottom: 1rem;
+				background-color: transparent;
+				grid-row-start: 2;
+			}
+			@include media(">=1200px") {
+				padding: 0 32px 0 160px;
+				background-position: 32px 6px;
+				background-size:initial;
+			}
+			a,
+			a:hover {
+				color: var(--wp--preset--color--bg-1);
+				text-decoration: underline;
+			}
+		}
+	}
+
+	@include media(">=1024px") {
+		#kytg-circle {
+
+
+			content: "";
+			position: absolute;
+			width: 1400px;
+			height: 1400px;
+			top: -350px;
+			left: 50%;
+			right: auto;
+			bottom: -350px;
+			background-image:
+				radial-gradient(circle at center right,#e6e9fb,#9e7feb 80%);
+			border-radius:100%;
+		}
+	}
+}

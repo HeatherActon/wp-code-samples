@@ -1,0 +1,75 @@
+.accordion {
+	cursor: pointer;
+	transition: .4s;
+	margin-bottom: 0;
+}
+
+.panel {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	margin: 0;
+}
+.kytgs-accordions-set {
+	padding-bottom: var(--wp--custom--layout--block-gap-large);
+	.kytgs-accordion-item {
+		border: var(--wp--custom--border-width--small) solid var(--wp--preset--color--fg-1);
+		border-radius: 36px;
+		padding: 11px 2rem 11px 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: var(--wp--custom--layout--block-gap);
+		.accordion {
+			width: 100%;
+			font-size: var(--wp--preset--font-size--small);
+			display: flex;
+			flex-wrap: nowrap;
+			align-items: center;
+			&:before {
+				flex-shrink: 0;
+				display: block;
+				content: "+";
+				width: 1.25rem;
+				font-weight: 400;
+				font-size: var(--wp--preset--font-size--large);
+				margin-bottom: 2px;
+			}
+			&.active {
+				&:before {
+					content: "-";
+				}
+			}
+		}
+		.panel {
+			width: 100%;
+			padding-left: 1.25rem;
+			font-size: var(--wp--preset--font-size--small);
+			> *:first-child {
+				margin-top: .5rem;
+			}
+		}
+	}
+}
+.kytg-references {
+	.accordion {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&:after {
+			display: block;
+			content: " ";
+			width: 24px;
+			height: 24px;
+			background: url('../icons/utility/chevron-down-solid.svg');
+			margin-left: 8px;
+			transition: transform .2s ease-in-out;
+		}
+		&.active {
+			margin-bottom: var(--wp--style--block-gap);
+			&:after {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}

@@ -1,0 +1,348 @@
+/*
+ * KYTGs Specifics
+ *
+--------------------------------------------- */
+
+/* Recent Posts
+--------------------------------------------- */
+.kytgs-recent-posts {
+	a {
+		text-decoration: none;
+		&:hover {
+			color: var(--wp--preset--color--bg-2);
+		}
+	}
+	.kytgs-recent-posts--header--more {
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+	}
+}
+
+/* Home Hero
+--------------------------------------------- */
+.kytgs-hero.wp-block-cover {
+	.wp-block-cover__copy-container {
+		width: 100%;
+		max-width: var(--wp--custom--layout--content);
+	}
+	.wp-block-heading {
+		font-weight: 400;
+	}
+	.wp-block-cover__caption {
+		position: absolute;
+		bottom: 1rem;
+		@include media(">600px") {
+			right: 50%;
+		}
+		@include media(">tablet") {
+			right: 40%;
+		}
+		@include media(">desktop") {
+			right: 35%;
+		}
+	}
+}
+
+/* CTA for quiz
+--------------------------------------------- */
+.kytgs-cta-quiz.wp-block-columns {
+	.wp-block-column {
+		&:first-child {
+			padding-left: 0 !important;
+			background: url(../../assets/images/gradient-circle.jpg) top right no-repeat;
+			background-size: cover;
+		}
+		&:last-child {
+			padding-right: 0 !important;
+		}
+		&.kytgs-cta-content .wp-block-buttons {
+			justify-content: center;
+		}
+
+		&.kytgs-image-caption-overlay-container {
+			position: relative;
+			overflow: hidden;
+			figure {
+				margin: 0;
+				max-width: 380px;
+			}
+			.kytgs-image-caption-overlay {
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: .5rem;
+				p {
+					max-width: 250px;
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}
+
+/* Subscribe box on bottom of home
+--------------------------------------------- */
+.kytgs-subscribe {
+	padding-top: var(--wp--custom--layout--block-gap-large) !important;
+	padding-bottom: var(--wp--custom--layout--block-gap-large) !important;
+	.kytgs-subscribe--inner-container {
+		position: relative;
+		text-align: center;
+		@include media(">=1024px") {
+			text-align: initial;
+		}
+		.kytgs-subscribe--form-container {
+			padding: var(--wp--custom--layout--block-gap-large);
+			background: var(--wp--preset--color--bg-1);
+			border-radius: var(--wp--custom--border-radius--medium);
+			border-bottom-right-radius: var(--wp--custom--border-radius--xlarge);
+			text-align: left;
+			@include media(">=1024px") {
+				max-width: calc(100% - 5*var(--wp--custom--layout--block-gap-large));
+				padding-right: calc( 6*var(--wp--custom--layout--block-gap-large));
+			}
+		}
+		.kytgs-subscribe--figure {
+			position: relative;
+			display: inline-block;
+			figcaption {
+				position: absolute;
+				left: 36px;
+				top: 40%;
+				text-align: left;
+				color: var(--wp--preset--color--bg-1);
+				font-style: italic;
+				font-size: var(--wp--preset--font-size--min);
+				@include media(">=1024px") {
+
+				}
+			}
+			@include media(">=1024px") {
+				position: absolute;
+				top: 3rem;
+				right: var(--wp--preset--spacing--40);
+				z-index: 2;
+			}
+		}
+	}
+}
+
+/* Tables
+--------------------------------------------- */
+.wp-block-table.kytgs-table-simple {
+	margin-bottom: var(--wp--custom--layout--block-gap-large);
+	table {
+		border-width: 2px;
+		thead {
+			border-bottom: none;
+		}
+		tr {
+			&:nth-child(2n+2) {
+				background: #ffd1c0
+			}
+		}
+		th {
+			background: #906ce8;
+			border-bottom: none;
+			color: var(--wp--preset--color--bg-1);
+			font-size: var(--wp--preset--font-size--large);
+			font-weight: 700;
+		}
+		td {
+			border: none;
+			font-size: var(--wp--preset--font-size--small);
+			&:first-child {
+				width: 33.3333%;
+				border-right: 2px solid #906ce8;
+			}
+
+
+		}
+	}
+
+	&#kytgs-table-symptom-tracker {
+
+		tr {
+			td {
+				border-right: 2px solid #906ce8;
+				font-size: var(--wp--preset--font-size--small);
+				&:first-child {
+					background: url(../images/table-checkbox.png) 8px center no-repeat;
+					background-size: 30px;
+					padding: 16px 16px 16px 48px;
+				}
+				&:last-child {
+					border-right: none;
+				}
+			}
+		}
+		tr:first-child,
+		tr:nth-child(2) {
+			background: #906ce8;
+			color: var(--wp--preset--color--bg-1);
+			text-transform: uppercase;
+			td {
+				font-size: var(--wp--preset--font-size--large);
+				font-weight: 700;
+				background: none;
+				padding: 8px;
+			}
+		}
+		tr:first-child {
+			td {
+				border-right: 2px solid var(--wp--preset--color--bg-1);
+			}
+			td:nth-child(2) {
+				border-bottom: 2px solid var(--wp--preset--color--bg-1);
+			}
+		}
+		tr:nth-child(2) {
+			td {
+				border-right: 2px solid var(--wp--preset--color--bg-1);
+				width: 12%;
+				text-align: center;
+				&:last-child {
+					width: 40%;
+				}
+			}
+		}
+		tr:last-child {
+			td {
+				border-bottom: 2px solid #906ce8;
+			}
+		}
+	}
+}
+
+/* Order FCS Tools
+--------------------------------------------- */
+.kytgs-order-form-container {
+	border-radius: var(--wp--custom--border-radius--medium);
+	padding: 1rem;
+	@include media(">=tablet") {
+	    padding-top: var(--wp--preset--spacing--60);
+		padding-right: var(--wp--preset--spacing--70);
+		padding-bottom: var(--wp--preset--spacing--40);
+		padding-left: var(--wp--preset--spacing--70);
+	}
+	@include media(">=mobile_menu") {
+		max-width: 80%;
+	}
+	.gform_wrapper.gravity-theme {
+		h2 {
+			font-size: var(--wp--preset--font-size--colossal);
+			margin-top: 0;
+			margin-bottom: var(--wp--custom--layout--block-gap);
+		}
+		legend {
+			font-size: var(--wp--preset--font-size--large);
+			font-weight: 400;
+			margin-bottom: var(--wp--custom--layout--block-gap);
+		}
+		.gfield_checkbox {
+			.gchoice {
+				margin-bottom: var(--wp--custom--layout--block-gap-large);
+			}
+			label > img {
+				height: 150px;
+				width: auto;
+			}
+			.checkbox-title {
+				font-size: var(--wp--preset--font-size--x-large);
+			}
+			.checkbox-paragraph {
+				font-size: var(--wp--preset--font-size--small);
+				font-weight: 400;
+				margin: 0;
+			}
+			input[type="checkbox"] {
+				display: none;
+
+				+ label {
+					cursor: pointer;
+					padding-left: 32px;
+					background-image: url('../images/quiz-checkbox.jpg');
+					background-repeat: no-repeat;
+					background-position: left 152px;
+					background-size: 24px;
+					max-width: none;
+				}
+
+				&:checked + label {
+					background-image: url('../images/quiz-checkbox-checked.jpg');
+				}
+			}
+			@include media(">=tablet") {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-column-gap: var(--wp--custom--layout--block-gap-large);
+				grid-template-rows: repeat(2, auto);
+				label > img {
+					height: 220px;
+				}
+				input[type="checkbox"] {
+					+ label {
+						padding-left: 48px;
+						background-position-y: 222px;
+						background-size: 32px;
+					}
+				}
+			}
+			@include media(">=mobile_menu") {
+				label > img {
+					height: 300px;
+				}
+				input[type="checkbox"] {
+					+ label {
+						background-position-y: 302px;
+					}
+				}
+			}
+		}
+		#field_3_8,
+		#field_3_15 {
+			margin-bottom: var(--wp--custom--layout--block-gap);
+		}
+		#field_3_11 {
+			margin-top: var(--wp--custom--layout--block-gap);
+			margin-bottom: calc(1.5*var(--wp--custom--layout--block-gap-large));
+			@include media(">=641px") {
+				margin-top: 0;
+			}
+		}
+		.gform_footer {
+			margin-top: var(--wp--custom--layout--block-gap-large);
+		}
+		input[type=submit] {
+			width: 100%;
+			max-width: 370px;
+		}
+	}
+
+}
+
+/* References
+--------------------------------------------- */
+.kytg-references {
+	ol {
+		li {
+			padding-top: calc(.5 * var(--wp--style--block-gap));
+			padding-bottom: var(--wp--style--block-gap);
+			font-size: var(--wp--preset--font-size--medium);
+			font-weight: 300;
+		}
+	}
+}
+
+/* Survey
+--------------------------------------------- */
+.survey-intro {
+	p {
+		@include media(">=1024px") {
+			width: 80%;
+			margin-left: 0 !important;
+		}
+	}
+
+}

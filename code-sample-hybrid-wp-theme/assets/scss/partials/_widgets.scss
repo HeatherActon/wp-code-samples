@@ -1,0 +1,114 @@
+.kytgs-widget {
+	margin-bottom: var(--wp--custom--layout--block-gap-large);
+	padding: 2rem;
+	border-radius: var(--wp--custom--border-radius--medium);
+	@include media(">=medium") {
+		padding: 3.25rem 8rem 3.25rem 3.44rem;
+	}
+
+	&.kytgs-widget-skinny {
+		@include media(">=medium") {
+			width: 75%;
+			margin-left: 0;
+			padding: 3.25rem 3.44rem;
+		}
+	}
+	.wp-block-heading {
+		font-size: var(--wp--preset--font-size--gigantic);
+		font-weight: 400;
+		margin-top: 0;
+		margin-bottom: var(--wp--custom--layout--block-gap);
+		line-height: var(--wp--custom--line-height--tiny);
+	}
+
+	p,
+	li {
+		font-size: var(--wp--preset--font-size--large);
+	}
+	p {
+		line-height: 1.1;
+	}
+}
+
+.kytgs-widget--subscribe-form {
+	p {
+		margin: 0;
+		height: 0;
+	}
+	.gform_wrapper.gravity-theme {
+		margin-top: 0;
+
+		.gform_description {
+			height: auto;
+			margin-top: 0;
+			margin-bottom: var(--wp--custom--layout--block-gap);
+		}
+		.gfield_required {
+			display: none;
+		}
+		.gfield--width-half {
+			grid-column: span 12 !important;
+		}
+		input[type="text"],
+		input[type="email"] {
+			color: var(--wp--preset--color--bg-1);
+			border-color: var(--wp--preset--color--bg-1);
+			font-size: var(--wp--preset--font-size--small);
+		}
+		input[type="text"]::placeholder,
+		input[type="email"]::placeholder {
+			color: var(--wp--preset--color--bg-1);
+		}
+		.gfield--type-select {
+			margin-top: 0;
+			.gfield_select {
+				box-shadow: 5px 5px 5px rgba(0,0,0,.3);
+			}
+		}
+		.gfield--type-html {
+			a {
+				color: var(--wp--preset--color--fg-1)
+			}
+		}
+		input[type="submit"] {
+			background: var(--wp--preset--color--bg-4);
+		}
+		.gform_footer {
+			display: block;
+			margin-top: var(--wp--custom--layout--block-gap-medium);
+			margin-bottom: 0;
+			padding-bottom: 0;
+			br {
+				display: none;
+			}
+		}
+	}
+}
+.kytgs-widget--subscribe-modal {
+}
+.kytgs-widget--fact-sheets {
+	figure {
+		margin-bottom: var(--wp--custom--layout--block-gap);
+	}
+	p {
+		margin-top: var(--wp--custom--layout--block-gap-medium);
+		margin-bottom: var(--wp--custom--layout--block-gap-medium);
+	}
+	ul {
+		list-style-type: none;
+		padding-left: 0;
+		li {
+			margin-bottom: calc( .25 * var(--wp--custom--layout--block-gap) );
+		}
+	}
+}
+.kytgs-widget--download {
+	@include media(">=medium") {
+		width: 80%;
+		margin-left: 0;
+	}
+	p {
+		margin-bottom: var(--wp--custom--layout--block-gap-medium);
+		line-height: var(--wp--custom--line-height--normal);
+	}
+}
