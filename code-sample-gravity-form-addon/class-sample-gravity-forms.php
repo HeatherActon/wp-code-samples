@@ -10,14 +10,14 @@ GFForms::include_addon_framework();
 class SampleGravityForms extends GFAddOn {
 
 	protected $_version = SAMPLE_GRAVITY_FORMS_VERSION;
-    protected $_min_gravityforms_version = '1.9';
-    protected $_slug = 'code-sample-gravity-form-addon';
-    protected $_path = 'code-sample-gravity-form-addon/code-sample-gravity-form-addon.php';
-    protected $_full_path = __FILE__;
-    protected $_title = 'Sample Gravity Forms Saleforce Marketing Cloud Connector';
-    protected $_short_title = 'SAMPLE GF SFMC';
+	protected $_min_gravityforms_version = '1.9';
+	protected $_slug = 'code-sample-gravity-form-addon';
+	protected $_path = 'code-sample-gravity-form-addon/code-sample-gravity-form-addon.php';
+	protected $_full_path = __FILE__;
+	protected $_title = 'Sample Gravity Forms Saleforce Marketing Cloud Connector';
+	protected $_short_title = 'SAMPLE GF SFMC';
 
-    private static $_instance = null;
+	private static $_instance = null;
 
 	public static function get_instance() {
 
@@ -66,10 +66,10 @@ class SampleGravityForms extends GFAddOn {
 	}
 
 	/**
-	* Configures plugin settings to enter SFMC client ID and client secret.
-	*
-	* @return array
-	*/
+	 * Configures plugin settings to enter SFMC client ID and client secret.
+	 *
+	 * @return array
+	 */
 	public function plugin_settings_fields() {
 
 		return array(
@@ -127,11 +127,11 @@ class SampleGravityForms extends GFAddOn {
 						),
 					),
 					array(
-						'label'             => esc_html__( 'POST to URL', 'kytg-gravity-forms' ),
-						'type'              => 'text',
-						'name'              => 'sfmc_post_url',
-						'tooltip'           => esc_html__( 'Enter the URL to POST this form\'s entry data to. If the payload has changed, contact the developer to remap the fields.', 'kytg-gravity-forms' ),
-						'class'             => 'medium',
+						'label'   => esc_html__( 'POST to URL', 'kytg-gravity-forms' ),
+						'type'    => 'text',
+						'name'    => 'sfmc_post_url',
+						'tooltip' => esc_html__( 'Enter the URL to POST this form\'s entry data to. If the payload has changed, contact the developer to remap the fields.', 'kytg-gravity-forms' ),
+						'class'   => 'medium',
 					),
 				),
 			),
